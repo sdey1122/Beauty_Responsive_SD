@@ -409,6 +409,7 @@ ul {
   max-width: 231px;
   margin-bottom: -75px;
 }
+
 .about-title span {
   color: var(--secondary-text-color);
   font-weight: 600;
@@ -1029,7 +1030,7 @@ ul {
   width: 230px;
   border-radius: 24px;
   object-fit: cover;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .why-images > img:first-child {
@@ -1046,6 +1047,7 @@ ul {
   transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
   border-radius: 24px;
   transform-origin: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .why-images > img:hover {
@@ -1080,7 +1082,7 @@ ul {
 .newsletter {
   position: relative;
   z-index: 0;
-  padding: 100px 0 20px;
+  padding: 100px 0 0;
 }
 
 .newsletter-copy {
@@ -1190,6 +1192,277 @@ ul {
   transform: scale(1.06);
   background: #d9c6ba;
 }
+
+/* Customer Section */
+.customer-section {
+  padding: 80px 0;
+}
+
+.customer-copy {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.customer-title {
+  display: inline;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--primary-text-color);
+  font-size: 35px;
+  margin: 0 auto;
+  max-width: 231px;
+  margin-bottom: -75px;
+}
+
+.customer-title span {
+  color: var(--secondary-text-color);
+  font-weight: 600;
+}
+
+.customer-divider {
+  position: relative;
+  width: 131px;
+  margin: 6px auto 0;
+}
+
+.customer-ornament {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  margin-top: -50px;
+}
+
+.customer-divider:hover .customer-ornament {
+  transform: translateY(-2px);
+}
+
+.customer-divider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.45) 40%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  animation: ornamentShine 4.5s linear infinite;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@keyframes ornamentShine {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.customer-subtitle {
+  color: var(--primary-text-color);
+  font-weight: 400;
+  line-height: 1.25;
+  font-size: 20px;
+  margin: 0 auto;
+  max-width: 833px;
+  margin-top: -50px;
+}
+
+.horizontal-accordion {
+  padding: 50px 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 520px;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.horizontal-accordion .accordion-items {
+  margin-right: 50px;
+}
+
+.horizontal-accordion .accordion-items:last-child {
+  margin-right: 0;
+}
+
+.accordion-items {
+  position: relative;
+  flex: 1;
+  min-width: 120px;
+  border-radius: 40px;
+  border: 1px solid #dfcbbd;
+  text-align: center;
+  padding: 20px 10px;
+  transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  background: #fff;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.accordion-items::before {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 40px;
+  height: 40px;
+  background: url("../assets/page-one-images/news-customer-footer/inside_button.png")
+    no-repeat center/cover;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.accordion-items:hover::before {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accordion-items::after {
+  content: "";
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  transform: translate(-50%, -50%);
+  background: url("../assets/page-one-images/news-customer-footer/outside_button.png")
+    no-repeat center/cover;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.accordion-items:hover::after {
+  opacity: 0;
+}
+
+.timings-arrow {
+  position: absolute;
+  left: 20px;
+  bottom: 22px;
+  display: flex;
+  align-items: center;
+  width: auto;
+  font-size: 0.85rem;
+  color: #7a5a3a;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.accordion-items:hover .timings-arrow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timings-arrow > div:first-child {
+  display: inline-flex;
+  align-items: center;
+}
+
+.timings-arrow > div:first-child::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background: url("../assets/page-one-images/news-customer-footer/clock_accordion.png")
+    no-repeat center/cover;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.timings-arrow > div:first-child {
+  margin-right: 8px;
+}
+
+.arrow img {
+  width: 18px;
+  transition: transform 0.4s ease;
+}
+
+.accordion-items:hover .arrow img {
+  transform: translateX(5px);
+}
+
+.accordion-items:hover {
+  flex: 3;
+  background: #f9f6f4;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-img {
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  transition: transform 0.6s ease;
+}
+
+.profile-img > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.accordion-items:hover {
+  justify-content: center;
+}
+
+.accordion-items:hover .profile-img {
+  margin-bottom: 15px;
+  margin-top: -40px;
+}
+
+.accordion-items > h3 {
+  margin-bottom: 150px;
+  transform: rotate(270deg);
+  transform-origin: center;
+  transition: transform 0.6s ease, color 0.4s ease, margin-bottom 0.4s ease;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.accordion-items:hover > h3 {
+  transform: rotate(0);
+  color: #7a5a3a;
+  margin: 20px 0;
+}
+
+.accordion-items > p {
+  display: none;
+  opacity: 0;
+  font-size: 0.95rem;
+  color: #5a4a3d;
+  padding: 0 10px;
+  margin-top: 0;
+  transition: opacity 0.6s ease, margin-top 0.4s ease;
+}
+
+.accordion-items:hover > p {
+  display: block;
+  opacity: 1;
+  margin-top: 0;
+}
+
+.accordion-items:hover {
+  padding-bottom: 48px;
+}
+
+/* Customer Section */
 
 /* Media Queries */
 /* <=1400px */
@@ -1563,6 +1836,87 @@ ul {
     margin-right: auto;
     width: min(90%, 520px);
   }
+
+  /* Customer Section */
+  .horizontal-accordion {
+    position: relative;
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+    max-width: 92%;
+    margin: 0 auto;
+  }
+  .accordion-items {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 88px;
+    margin: 12px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 18px;
+    padding: 14px 16px;
+    overflow: visible;
+    z-index: 0;
+  }
+  .profile-img {
+    height: 56px;
+    width: 56px;
+    flex: 0 0 56px;
+  }
+  .accordion-items > h3 {
+    transform: rotate(0);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0 auto;
+  }
+  .accordion-items::after,
+  .accordion-items::before {
+    display: none !important;
+  }
+  .accordion-items > p {
+    display: none !important;
+    opacity: 0;
+  }
+  .timings-arrow {
+    display: none;
+  }
+  .accordion-items:hover {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 18px 16px 20px;
+    min-height: unset;
+    z-index: 1;
+  }
+  .accordion-items:hover > h3 {
+    margin: 10px 0 6px 0;
+  }
+  .accordion-items:hover > p {
+    display: block !important;
+    opacity: 1;
+    text-align: center;
+    padding: 0 10px;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .accordion-items:hover .timings-arrow {
+    display: flex;
+    position: static;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    opacity: 1;
+    transform: none;
+  }
+  .timings-arrow > div:first-child::before {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* <=768px */
@@ -1866,6 +2220,43 @@ ul {
     width: 36px;
     height: 36px;
     margin-left: -20px;
+  }
+
+  /* Customer Section */
+  .customer-title {
+    font-size: 20px;
+  }
+  .customer-subtitle {
+    font-size: 16px;
+    margin-bottom: -30px;
+  }
+  .accordion-items {
+    min-height: 80px;
+    padding: 12px;
+  }
+  .profile-img {
+    height: 52px;
+    width: 52px;
+    flex: 0 0 52px;
+  }
+  .accordion-items > h3 {
+    font-size: 0.98rem;
+  }
+  .accordion-items > p {
+    font-size: 12px;
+  }
+  .accordion-items::after,
+  .accordion-items::before {
+    display: none !important;
+  }
+  .accordion-items:hover .timings-arrow {
+    display: flex;
+    justify-content: center;
+    margin-top: 8px;
+  }
+  .timings-arrow > div:first-child::before {
+    width: 16px;
+    height: 16px;
   }
 }
 
