@@ -269,6 +269,25 @@ ul {
   right: 0;
 }
 
+.nav-icons i {
+  color: var(--primary-text-color);
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform, color;
+}
+
+.nav-icons i:hover {
+  color: var(--secondary-text-color);
+  transform: translateY(-4px) scale(1.12);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-icons i:active {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
 /* Banner Section */
 .banner-copy {
   background: url("../assets/page-one-images/navbar-banner/banner-background.png")
