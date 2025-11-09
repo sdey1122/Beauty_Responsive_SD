@@ -40,68 +40,93 @@ navLinks.forEach((link) => {
 
 // Counter
 (() => {
-  const START = 1;
-  const DURATION = 1400;
+  const DUR_TO_999 = 6000;
+  const DUR_TO_K = 5000;
   const STEP_MS = 28;
+  const IO_THRESHOLD = 0.25;
+
+  const itemTimers = new WeakMap();
 
   function initCounters() {
     const section = document.querySelector(".counter-section");
-    const counters = Array.from(document.querySelectorAll(".counter-value"));
-    if (!section || counters.length === 0) return;
+    const items = Array.from(document.querySelectorAll(".counter-item"));
+    if (!section || items.length === 0) return;
 
-    const timers = new WeakMap();
-    const setNumber = (el, n) => {
-      if (el.firstChild && el.firstChild.nodeType === Node.TEXT_NODE) {
-        el.firstChild.nodeValue = String(n);
-      } else {
-        el.textContent = String(n);
-      }
-    };
-
-    const reset = (el) => {
-      const t = timers.get(el);
+    const resetItem = (item) => {
+      const t = itemTimers.get(item);
       if (t) {
-        clearInterval(t);
-        timers.delete(el);
+        t.forEach((id) => clearInterval(id));
+        itemTimers.delete(item);
       }
-      setNumber(el, START);
+      const valueEl = item.querySelector(".counter-value");
+      const unitEl = item.querySelector(".counter-unit");
+      if (valueEl) valueEl.textContent = "0";
+      if (unitEl) unitEl.style.visibility = "hidden";
     };
 
-    const animate = (el) => {
-      const prev = timers.get(el);
-      if (prev) {
-        clearInterval(prev);
-        timers.delete(el);
-      }
+    const animateItem = (item) => {
+      resetItem(item);
+      const valueEl = item.querySelector(".counter-value");
+      const unitEl = item.querySelector(".counter-unit");
+      if (!valueEl || !unitEl) return;
 
-      const target = Number(el.dataset.target || START);
-      const totalSteps = Math.max(1, Math.ceil(DURATION / STEP_MS));
-      const inc = Math.max((target - START) / totalSteps, 0.1);
-      let cur = START;
+      const targetK = Math.max(1, Number(valueEl.dataset.target || 1));
 
-      setNumber(el, START);
+      const timers = [];
 
-      const id = setInterval(() => {
-        cur += inc;
-        if (cur >= target) {
-          setNumber(el, target);
-          clearInterval(id);
-          timers.delete(el);
+      let cur1 = 0;
+      const steps1 = Math.max(1, Math.ceil(DUR_TO_999 / STEP_MS));
+      const inc1 = 999 / steps1;
+
+      valueEl.textContent = "0";
+      unitEl.style.visibility = "hidden";
+
+      const id1 = setInterval(() => {
+        cur1 += inc1;
+        if (cur1 >= 999) {
+          valueEl.textContent = "999";
+          clearInterval(id1);
+
+          setTimeout(() => {
+            let cur2 = 1;
+            const steps2 = Math.max(1, Math.ceil(DUR_TO_K / STEP_MS));
+            const inc2 = Math.max((targetK - 1) / steps2, 0.1);
+
+            unitEl.style.visibility = "visible";
+            valueEl.textContent = "1";
+
+            const id2 = setInterval(() => {
+              cur2 += inc2;
+              if (cur2 >= targetK) {
+                valueEl.textContent = String(targetK);
+                clearInterval(id2);
+              } else {
+                valueEl.textContent = String(Math.floor(cur2));
+              }
+            }, STEP_MS);
+
+            const arr = itemTimers.get(item) || [];
+            arr.push(id2);
+            itemTimers.set(item, arr);
+          }, STEP_MS * 2);
         } else {
-          setNumber(el, Math.floor(cur));
+          valueEl.textContent = String(Math.floor(cur1));
         }
       }, STEP_MS);
-      timers.set(el, id);
+
+      timers.push(id1);
+      itemTimers.set(item, timers);
     };
 
-    const onEnter = () => counters.forEach(animate);
-    const onExit = () => counters.forEach(reset);
+    const onEnter = () => items.forEach(animateItem);
+    const onExit = () => items.forEach(resetItem);
+
     if ("IntersectionObserver" in window) {
       const io = new IntersectionObserver(
         (entries) => {
           entries.forEach((e) => (e.isIntersecting ? onEnter() : onExit()));
         },
-        { threshold: 0.2 }
+        { threshold: IO_THRESHOLD }
       );
       io.observe(section);
     } else {
@@ -116,12 +141,14 @@ navLinks.forEach((link) => {
       check();
     }
 
-    counters.forEach((el) => setNumber(el, START));
+    items.forEach(resetItem);
   }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initCounters, { once: true });
   } else {
     initCounters();
   }
+
   window.AboutPage = Object.assign(window.AboutPage || {}, { initCounters });
 })();
