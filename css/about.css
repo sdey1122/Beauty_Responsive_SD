@@ -725,7 +725,7 @@ ul {
 
 /* Team Section */
 .team-section {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .team-heading {
@@ -819,6 +819,86 @@ ul {
   font-size: 12px;
   color: var(--primary-text-color);
   margin-top: 4px;
+}
+
+/* ---- Counter Section ---- */
+.counter-section {
+  padding: 10px 0 10px;
+}
+
+.counter-wrap {
+  position: relative;
+  background: var(--tertiary-text-color);
+  border-radius: 30px;
+  overflow: hidden;
+  width: 100%;
+  padding: 46px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.counter-wrap::before,
+.counter-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 46%;
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 720px auto;
+  opacity: 0.1;
+  pointer-events: none;
+  filter: grayscale(1) brightness(2.2) invert(1);
+}
+
+.counter-wrap::before {
+  left: 0;
+  background-image: url("../assets/about-page-images/cherry-blossom-two.png");
+  background-position: -30px center;
+}
+
+.counter-wrap::after {
+  right: 0;
+  background-image: url("../assets/about-page-images/cherry-blossom-one.png");
+  background-position: right -20px center;
+}
+
+.counter-item {
+  position: relative;
+  text-align: center;
+  margin: 0 10px;
+  z-index: 1;
+}
+
+.counter-num {
+  display: inline-flex;
+  align-items: baseline;
+  line-height: 1;
+  color: var(--footer-title-color);
+  font-family: "Playfair Display", serif;
+}
+
+.counter-value {
+  font-weight: 700;
+  font-size: clamp(36px, 4.2vw, 64px);
+  letter-spacing: 0.5px;
+}
+
+.counter-unit {
+  margin-left: 6px;
+  font-weight: 700;
+  font-size: clamp(22px, 2.2vw, 34px);
+  color: var(--secondary-text-color);
+}
+
+.counter-label {
+  display: block;
+  margin-top: 10px;
+  font-size: clamp(12px, 1.4vw, 18px);
+  color: var(--secondary-text-color);
+  opacity: 0.85;
 }
 
 /* Media Queries */
@@ -1280,6 +1360,16 @@ ul {
   .member-role {
     text-align: center;
   }
+
+  /* Counter Section */
+  .counter-wrap {
+    padding: 40px 22px;
+  }
+  .counter-wrap::before,
+  .counter-wrap::after {
+    background-size: 560px auto;
+    opacity: 0.12;
+  }
 }
 
 /* <=768px */
@@ -1369,6 +1459,20 @@ ul {
   }
   .member-name {
     font-size: 18px;
+  }
+
+  /* Counter Section */
+  .counter-wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 34px 18px;
+  }
+  .counter-item {
+    margin: 10px 18px;
+  }
+  .counter-wrap::before,
+  .counter-wrap::after {
+    background-size: 520px auto;
   }
 }
 
@@ -1503,10 +1607,20 @@ ul {
   .member-card:nth-child(3) {
     padding-bottom: 0 !important;
   }
+
+  /* Counter Section */
+  .counter-item {
+    margin: 12px 14px;
+  }
+  .counter-wrap::before,
+  .counter-wrap::after {
+    background-size: 440px auto;
+    opacity: 0.14;
+  }
 }
 
 /* Special Media Queries */
-
+/* <=2560px */
 @media screen and (max-width: 2560px) {
   /* Team Section */
   .member-card:nth-child(1),
