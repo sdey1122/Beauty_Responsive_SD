@@ -723,6 +723,104 @@ ul {
   transform: translateX(4px);
 }
 
+/* Team Section */
+.team-section {
+  padding: 80px 0;
+}
+
+.team-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.team-eyebrow {
+  display: block;
+  color: var(--primary-text-color);
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.team-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  color: var(--primary-text-color);
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.team-title span {
+  color: var(--secondary-text-color);
+  font-weight: 500;
+}
+
+.team-row,
+.member-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 -12px;
+}
+
+.member-card {
+  flex: 0 0 calc(25% - 24px);
+  max-width: calc(25% - 24px);
+  margin: 0 12px 42px;
+  transition: padding 0.35s ease;
+}
+
+.member-card:nth-child(1),
+.member-card:nth-child(3) {
+  padding-top: 0;
+  padding-bottom: 24px;
+}
+
+.member-card:nth-child(2),
+.member-card:nth-child(4) {
+  padding-top: 24px;
+  padding-bottom: 0;
+}
+
+.member-img {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.member-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.member-img:hover img {
+  transform: translateY(-8px) rotate(-1deg);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+.member-info {
+  margin-top: 14px;
+}
+
+.member-name {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--primary-text-color);
+  margin: 0;
+}
+
+.member-role {
+  display: block;
+  font-size: 12px;
+  color: var(--primary-text-color);
+  margin-top: 4px;
+}
+
 /* Media Queries */
 /* <=1600px */
 @media screen and (max-width: 1600px) {
@@ -767,6 +865,16 @@ ul {
     top: 65px;
     left: -12px;
   }
+
+  /* Team Section */
+  .member-card:nth-child(1),
+  .member-card:nth-child(3) {
+    padding-bottom: 60px;
+  }
+  .member-card:nth-child(2),
+  .member-card:nth-child(4) {
+    padding-top: 100px;
+  }
 }
 /* <=1400px */
 @media screen and (max-width: 1400px) {
@@ -787,6 +895,11 @@ ul {
     height: 44px;
     padding: 0 14px;
     font-size: 12px;
+  }
+
+  /* Team Section */
+  .member-card {
+    flex: 0 0 calc(25% - 24px);
   }
 }
 
@@ -881,6 +994,21 @@ ul {
   }
   .skin-two-copy span {
     max-width: 365px;
+  }
+
+  /* Team Section */
+  .member-card {
+    flex: 0 0 calc(25% - 24px);
+    max-width: calc(25% - 24px);
+    margin: 0 12px 36px;
+  }
+  .member-card:nth-child(1),
+  .member-card:nth-child(3) {
+    padding-bottom: 30px;
+  }
+  .member-card:nth-child(2),
+  .member-card:nth-child(4) {
+    padding-top: 70px;
   }
 }
 
@@ -1120,6 +1248,38 @@ ul {
     max-width: 92%;
     margin: 0 auto;
   }
+
+  /* Team Section */
+  .team-title {
+    font-size: 34px;
+  }
+  .member-card {
+    flex: 0 0 calc(50% - 24px);
+    max-width: calc(50% - 24px);
+    margin: 0 12px 32px;
+  }
+  .member-card:nth-child(odd) {
+    padding-top: 0;
+    padding-bottom: 14px;
+  }
+  .member-card:nth-child(even) {
+    padding-top: 14px;
+    padding-bottom: 0;
+  }
+  .member-card:nth-child(1),
+  .member-card:nth-child(3) {
+    padding-bottom: 70px;
+  }
+  .member-card:nth-child(2),
+  .member-card:nth-child(4) {
+    padding-top: 120px;
+  }
+  .member-name {
+    text-align: center;
+  }
+  .member-role {
+    text-align: center;
+  }
 }
 
 /* <=768px */
@@ -1198,6 +1358,17 @@ ul {
     text-align: center;
     justify-content: center;
     width: 100%;
+  }
+
+  /* Team Section */
+  .team-title {
+    font-size: 32px;
+  }
+  .member-card {
+    flex: 0 0 calc(50% - 24px);
+  }
+  .member-name {
+    font-size: 18px;
   }
 }
 
@@ -1305,5 +1476,45 @@ ul {
   }
   .skin-two-kicker {
     font-size: 16px;
+  }
+
+  /* Team Section */
+  .team-title {
+    font-size: 28px;
+  }
+  .member-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 10px 0 26px;
+    padding: 0;
+  }
+  .member-name {
+    font-size: 18px;
+  }
+  .member-img img {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .member-card:nth-child(2),
+  .member-card:nth-child(4) {
+    padding-top: 0 !important;
+  }
+  .member-card:nth-child(1),
+  .member-card:nth-child(3) {
+    padding-bottom: 0 !important;
+  }
+}
+
+/* Special Media Queries */
+
+@media screen and (max-width: 2560px) {
+  /* Team Section */
+  .member-card:nth-child(1),
+  .member-card:nth-child(3) {
+    padding-bottom: 80px;
+  }
+  .member-card:nth-child(2),
+  .member-card:nth-child(4) {
+    padding-top: 120px;
   }
 }
