@@ -1705,7 +1705,7 @@ ul {
   color: #000;
 }
 
-/* Footer Scetion */
+/* Footer Section */
 .footer-section {
   padding: 40px 0 0;
 }
@@ -1814,7 +1814,6 @@ ul {
   font-weight: 700;
   color: var(--footer-title-color);
   font-family: "Playfair Display", serif;
-  cursor: pointer;
 }
 
 .payments {
