@@ -40,7 +40,7 @@ navLinks.forEach((link) => {
 
 // Counter
 (() => {
-  const DUR_TO_999 = 6000;
+  const DUR_TO_999 = 5000;
   const DUR_TO_K = 5000;
   const STEP_MS = 28;
   const IO_THRESHOLD = 0.25;
