@@ -94,3 +94,62 @@ navLinks.forEach((link) => {
 
   window.addEventListener("beforeunload", () => clearTimeout(loadingTimer));
 })();
+
+// Contact Us MAP FancyBox
+const MAP_DEFAULT =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8915.056928213513!2d10.1888!3d56.1572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c3f8f81b2c5a1%3A0x656bbd0457f0c6a4!2sTage-Hansens%20Gade%2035%2C%208000%20Aarhus!5e0!3m2!1sen!2sin!4v1731257300000!5m2!1sen!2sin";
+
+const MAP_SAT =
+  "https://www.google.com/maps?hl=en&q=Tage-Hansens%20Gade%2035%2C%208000%20Aarhus&layer=c&cbll=56.1572,10.1888&cbp=12,0,0,0,0&output=embed";
+
+const frame = document.getElementById("gmapFrame");
+const buttons = document.querySelectorAll(".toggle-style");
+
+buttons.forEach((b) => b.classList.remove("active"));
+document
+  .querySelector('.toggle-style[data-style="default"]')
+  .classList.add("active");
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const style = btn.getAttribute("data-style");
+    frame.src = style === "sat" ? MAP_SAT : MAP_DEFAULT;
+
+    buttons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+  });
+});
+
+// Scroll Lock While Offcanvas is opened
+document.addEventListener("DOMContentLoaded", () => {
+  const oc = document.getElementById("offcanvasNavbar");
+  if (!oc) return;
+
+  let savedScrollY = 0;
+
+  function lockBody() {
+    savedScrollY = window.scrollY || document.documentElement.scrollTop;
+
+    const sb = window.innerWidth - document.documentElement.clientWidth;
+    if (sb > 0) document.body.style.paddingRight = sb + "px";
+
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  }
+
+  function unlockBody() {
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.width = "";
+    document.body.style.paddingRight = "";
+    window.scrollTo(0, savedScrollY);
+  }
+
+  oc.addEventListener("show.bs.offcanvas", lockBody);
+  oc.addEventListener("hidden.bs.offcanvas", unlockBody);
+});

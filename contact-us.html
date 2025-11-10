@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LuxeShop</title>
+    <!-- FancyBox CDN -->
+     <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
     <!-- Font-awesome CDN -->
     <link
       rel="stylesheet"
@@ -148,7 +153,7 @@
                   >
                 </li>
                 <li class="nav-item nav-contact">
-                  <a class="nav-link hover-link" aria-current="page" href="#"
+                  <a class="nav-link hover-link" aria-current="page" href="contact-us.html"
                     >Contact Us</a
                   >
                 </li>
@@ -326,7 +331,59 @@
           </div>
         </div>
       </div>
+
+      <!-- =========== MAP SECTION =========== -->
+<!-- =========== FULL MAP SECTION (inline, no modal) =========== -->
+<section class="map-section py-5">
+  <div class="container">
+    <div class="map-head text-center">
+      <div class="eyebrow">OUR LOCATION</div>
+      <h2 class="ask-title display-6 mb-3">
+        Find Us <span>On the Map</span>
+      </h2>
+    </div>
+
+    <!-- Map card -->
+    <div class="map-card">
+      <!-- Controls (margin-based spacing) -->
+      <div class="map-toolbar">
+        <button class="btn-map toggle-style" data-style="default">Default</button>
+        <button class="btn-map toggle-style" data-style="sat">Satellite</button>
+
+        <a
+          class="btn-map dir-link"
+          target="_blank"
+          rel="noopener"
+          href="https://www.google.com/maps/dir/?api=1&destination=Tage-Hansens+Gade+35%2C+8000+Aarhus"
+        >
+          Get Directions
+        </a>
+      </div>
+
+      <!-- Responsive map frame -->
+      <div class="map-frame">
+        <iframe
+          id="gmapFrame"
+          class="map-iframe"
+          title="LuxeShop Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8915.056928213513!2d10.1888!3d56.1572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464c3f8f81b2c5a1%3A0x656bbd0457f0c6a4!2sTage-Hansens%20Gade%2035%2C%208000%20Aarhus!5e0!3m2!1sen!2sin!4v1731257300000!5m2!1sen!2sin"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     </main>
+    <!-- FancyBox CDN -->
+     <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <!-- Boostrap CDN -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
