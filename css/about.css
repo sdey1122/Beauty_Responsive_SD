@@ -651,6 +651,14 @@ ul {
   margin: 6px 0;
 }
 
+.skin-two-meta .meta-line span a {
+  color: var(--footer-title-color);
+  opacity: 0.9;
+  font-size: 14px;
+  display: block;
+  margin: 6px 0;
+}
+
 .readmore-link {
   text-decoration: none;
 }
