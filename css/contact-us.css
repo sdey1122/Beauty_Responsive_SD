@@ -1110,7 +1110,7 @@ ul {
     margin-right: 75px;
   }
 
-    /* Footer Section */
+  /* Footer Section */
   .footer-copy {
     padding: 60px 40px 24px;
   }
@@ -1326,6 +1326,13 @@ ul {
       opacity: 1;
       transform: scaleX(1);
     }
+  }
+  .offcanvas .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%) !important;
+    opacity: 0.95;
+  }
+  .offcanvas .btn-close:focus {
+    box-shadow: none;
   }
 
   /* Banner Section */

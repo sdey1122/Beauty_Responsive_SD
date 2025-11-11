@@ -55,8 +55,8 @@ document.addEventListener("click", (e) => {
       stopOnFocus: true,
       style: {
         background: liked
-          ? "linear-gradient(to right, #de0000, #ff6f6f)"
-          : "linear-gradient(to right, #555, #888)",
+          ? "linear-gradient(to right, #00c922ff, #00eb18ff)"
+          : "linear-gradient(to right, #d80000ff, #ff1c1cff)",
         color: "#fff",
         borderRadius: "8px",
         boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
@@ -73,7 +73,7 @@ document.addEventListener("click", (e) => {
       position: "right",
       stopOnFocus: true,
       style: {
-        background: "linear-gradient(to right, #a68268, #cbb19a)",
+        background: "linear-gradient(to right, #00c922ff, #00eb18ff)",
         color: "#fff",
         borderRadius: "8px",
         boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
