@@ -25,15 +25,60 @@ heartIcon.addEventListener("click", () => {
 });
 
 // Heart Icon Toggle Color (Product Page Card)
-const podHeart = document.getElementById("pod-heart");
+// const podHeart = document.getElementById("pod-heart");
 
-podHeart.addEventListener("click", () => {
-  if (podHeart.classList.contains("fa-regular")) {
-    podHeart.classList.remove("fa-regular");
-    podHeart.classList.add("fa-solid", "liked");
-  } else {
-    podHeart.classList.remove("fa-solid", "liked");
-    podHeart.classList.add("fa-regular");
+// podHeart.addEventListener("click", () => {
+//   if (podHeart.classList.contains("fa-regular")) {
+//     podHeart.classList.remove("fa-regular");
+//     podHeart.classList.add("fa-solid", "liked");
+//   } else {
+//     podHeart.classList.remove("fa-solid", "liked");
+//     podHeart.classList.add("fa-regular");
+//   }
+// });
+
+// Toggle Heart + Toastify Popup (Our Product Section)
+document.addEventListener("click", (e) => {
+  const heartBtn = e.target.closest(".prod-heart");
+  const bagBtn = e.target.closest(".mini-bag");
+
+  if (heartBtn) {
+    const liked = heartBtn.classList.toggle("liked");
+    heartBtn.setAttribute("aria-pressed", liked ? "true" : "false");
+
+    Toastify({
+      text: liked ? "Added to wishlist" : "Removed from wishlist",
+      duration: 2500,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: liked
+          ? "linear-gradient(to right, #de0000, #ff6f6f)"
+          : "linear-gradient(to right, #555, #888)",
+        color: "#fff",
+        borderRadius: "8px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+      },
+    }).showToast();
+  }
+
+  if (bagBtn) {
+    Toastify({
+      text: "Item added to cart",
+      duration: 2500,
+      close: true,
+      gravity: "top",
+      position: "right",
+      stopOnFocus: true,
+      style: {
+        background: "linear-gradient(to right, #a68268, #cbb19a)",
+        color: "#fff",
+        borderRadius: "8px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+      },
+    }).showToast();
   }
 });
 
