@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LuxeShop</title>
+    <!-- AOS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
     <!-- Font-awesome CDN -->
     <link
       rel="stylesheet"
@@ -211,7 +216,7 @@
                 <span class="skin-title-main">Guaranteed</span>
                 <span class="skin-title-accent">Result In 2 Weeks</span>
               </h2>
-              <div class="skin-copy">
+              <div class="skin-copy" data-aos="fade-up" data-aos-delay="150">
                 Quickly pursue granular synergy after just in time niche
                 markets. Phosfluorescently syndicate stickly content whereas
                 robust resources. Uniquely target integrated meta-service and
@@ -219,8 +224,12 @@
                 ideas through customer-directed leadership skills. Efficiently
                 evolve.
               </div>
-              <div class="skin-sep"></div>
-              <ul class="skin-contacts">
+              <div
+                class="skin-sep"
+                data-aos="fade-up"
+                data-aos-delay="150"
+              ></div>
+              <ul class="skin-contacts" data-aos="fade-up" data-aos-delay="150">
                 <li>
                   <span class="ico"
                     ><img src="./assets/about-page-images/Location.png" alt=""
@@ -261,7 +270,7 @@
       </section>
 
       <!-- Skin-two Section -->
-      <section class="skin-sec-two">
+      <section class="skin-sec-two" data-aos="fade-up" data-aos-delay="150">
         <div class="container">
           <div class="skin-two-wrap">
             <div class="skin-two-left">
@@ -270,7 +279,11 @@
                 <span class="skin-two-title-main">Restore Skin</span>
                 <span class="skin-two-title-accent">Moisture</span>
               </div>
-              <div class="skin-two-copy">
+              <div
+                class="skin-two-copy"
+                data-aos="fade-up"
+                data-aos-delay="250"
+              >
                 <span>
                   Lorem ipsum dolor sit amet consectetur. Elementum fames in sed
                   nunc iaculis sit. Amet velit ut faucibus quis risus at sit
@@ -278,7 +291,11 @@
                   enim tellus semper non.
                 </span>
               </div>
-              <div class="skin-two-meta">
+              <div
+                class="skin-two-meta"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
                 <div class="meta-col">
                   <div class="meta-title">Opening Hours</div>
                   <div class="meta-line">
@@ -384,13 +401,13 @@
               </a>
             </div>
             <div class="skin-two-right">
-              <div class="skin-two-img">
+              <div class="skin-two-img" data-aos="fade-up" data-aos-delay="250">
                 <img
                   src="./assets/about-page-images/oils.png"
                   alt="Skincare oils"
                 />
               </div>
-              <div class="skin-two-img">
+              <div class="skin-two-img" data-aos="fade-up" data-aos-delay="350">
                 <img
                   src="./assets/about-page-images/close-up-face-girl.png"
                   alt="Face care"
@@ -403,12 +420,12 @@
       <!-- Team Section -->
       <section class="team-section">
         <div class="container">
-          <div class="team-heading">
+          <div class="team-heading" data-aos="fade-up" data-aos-delay="150">
             <span class="team-eyebrow">OUR TEAM</span>
             <h2 class="team-title">Cosmetic <span>Experts</span></h2>
           </div>
           <div class="team-row">
-            <div class="member-card">
+            <div class="member-card team-card-anim">
               <div class="member-img">
                 <img
                   src="./assets/about-page-images/crush-girl-beauty.png"
@@ -420,7 +437,7 @@
                 <span class="member-role">CEO</span>
               </div>
             </div>
-            <div class="member-card">
+            <div class="member-card team-card-anim">
               <div class="member-img">
                 <img
                   src="./assets/about-page-images/photography-guy.png"
@@ -432,7 +449,7 @@
                 <span class="member-role">Product Manager</span>
               </div>
             </div>
-            <div class="member-card">
+            <div class="member-card team-card-anim">
               <div class="member-img">
                 <img
                   src="./assets/about-page-images/potrait-hey.png"
@@ -444,7 +461,7 @@
                 <span class="member-role">Co-Founder</span>
               </div>
             </div>
-            <div class="member-card">
+            <div class="member-card team-card-anim">
               <div class="member-img">
                 <img
                   src="./assets/about-page-images/potrait-opium.png"
@@ -460,7 +477,7 @@
         </div>
       </section>
       <!-- Counter Section -->
-      <section class="counter-section">
+      <section class="counter-section" data-aos="fade-up" data-aos-delay="350">
         <div class="container">
           <div class="counter-wrap" id="counterWrap">
             <div class="counter-item">
@@ -727,9 +744,11 @@
         </div>
       </div>
     </footer>
+    <!-- AOS CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- Boostrap CDN -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

@@ -277,3 +277,44 @@ window.addEventListener("click", (e) => {
     createSparkle(e.clientX, e.clientY, isLightBg);
   }
 });
+
+// AOS Animation
+AOS.init({
+  duration: 700,
+  once: false,
+  easing: "ease-out-cubic",
+  offset: 120,
+});
+
+// Special Card Animation
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const cards = gsap.utils.toArray(".team-card-anim");
+
+  if (!cards.length) return;
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".team-section",
+      start: "top 80%",
+      toggleActions: "restart none restart reset",
+    },
+  });
+
+  cards.forEach((card, index) => {
+    const fromRight = index % 2 === 0;
+
+    tl.from(
+      card,
+      {
+        opacity: 0,
+        x: fromRight ? 80 : -80,
+        rotateZ: fromRight ? 4 : -4,
+        duration: 0.8,
+        ease: "power3.out",
+      },
+      index * 0.95
+    );
+  });
+});
