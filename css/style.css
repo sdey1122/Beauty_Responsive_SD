@@ -40,6 +40,110 @@ ul {
   width: 100%;
 }
 
+/* Loader */
+body.luxshop-loader-active {
+  overflow: hidden;
+}
+
+.luxshop-loader {
+  position: fixed;
+  inset: 0;
+  background: #050304;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.luxshop-loader-inner {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  color: var(--tertiary-text-color);
+}
+
+.luxshop-loader-label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--tertiary-text-color);
+  animation: luxshopLoaderWord 0.8s ease-out forwards;
+  font-size: 3.2rem;
+  letter-spacing: 0.18em;
+}
+
+.luxshop-loader-sub {
+  display: block;
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 26px;
+  opacity: 0;
+  animation: luxshopLoaderSub 0.7s ease-out 0.25s forwards;
+  font-size: 1.1rem;
+}
+
+.luxshop-loader-line {
+  width: 0;
+  height: 3px;
+  margin: 0 auto;
+  background: var(--secondary-text-color);
+  box-shadow: 0 0 18px rgba(166, 130, 104, 0.9);
+  border-radius: 999px;
+  animation: luxshopLoaderLine 0.7s ease-out 0.35s forwards;
+}
+
+.luxshop-loader--hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.luxshop-loader--hide-immediate {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: none;
+}
+
+@keyframes luxshopLoaderWord {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxshopLoaderSub {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes luxshopLoaderLine {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 140px;
+    opacity: 1;
+  }
+}
+
 /* GSAP */
 .flair {
   width: 30px;
@@ -2331,6 +2435,13 @@ ul {
 
 /* <=992px */
 @media screen and (max-width: 991px) {
+  /* Loader */
+  .luxshop-loader-label {
+    font-size: 2.4rem;
+  }
+  .luxshop-loader-sub {
+    font-size: 0.9rem;
+  }
   /* Header Section */
   .search-wrap {
     max-width: 100%;
@@ -2760,6 +2871,14 @@ ul {
 
 /* <=768px */
 @media screen and (max-width: 768px) {
+  /* Loader */
+  .luxshop-loader-label {
+    font-size: 1.9rem;
+  }
+  .luxshop-loader-sub {
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+  }
   /* Banner Section */
   .banner-title {
     font-size: 84px;
@@ -2961,6 +3080,18 @@ ul {
 
 /* <=576px */
 @media screen and (max-width: 576px) {
+  /* Loader */
+  .luxshop-loader-label {
+    font-size: 1.5rem;
+  }
+  .luxshop-loader-sub {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+  }
+  .luxshop-loader-line {
+    width: 100px !important;
+    height: 2px;
+  }
   /* Banner Section */
   .banner-title {
     font-size: 64px;

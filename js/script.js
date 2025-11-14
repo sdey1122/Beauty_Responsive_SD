@@ -374,3 +374,27 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power2.out",
   });
 });
+
+// Loader
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.querySelector(".luxshop-loader");
+
+  if (!loader) return;
+
+  const alreadyShown = sessionStorage.getItem("luxshopIntroShown");
+
+  if (alreadyShown === "true") {
+    loader.classList.add("luxshop-loader--hide-immediate");
+    document.body.classList.remove("luxshop-loader-active");
+    return;
+  }
+
+  document.body.classList.add("luxshop-loader-active");
+  sessionStorage.setItem("luxshopIntroShown", "true");
+
+  setTimeout(() => {
+    loader.classList.add("luxshop-loader--hide");
+    document.body.classList.remove("luxshop-loader-active");
+  }, 1400);
+});
+
