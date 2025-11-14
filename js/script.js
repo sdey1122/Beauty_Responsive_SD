@@ -289,3 +289,88 @@ window.addEventListener("click", (e) => {
     createSparkle(e.clientX, e.clientY, isLightBg);
   }
 });
+
+// AOS Animation
+AOS.init({
+  duration: 700,
+  once: false,
+  easing: "ease-out-cubic",
+  offset: 120,
+});
+
+// Animated Paragraphs
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedTexts = document.querySelectorAll(".animated-text");
+
+  animatedTexts.forEach((el) => {
+    const text = el.textContent;
+    el.textContent = "";
+
+    const chars = text.split("");
+
+    chars.forEach((char) => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      el.appendChild(span);
+    });
+
+    const spans = el.querySelectorAll("span");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.fromTo(
+              spans,
+              { opacity: 0, y: 6 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.015,
+                ease: "power2.out",
+              }
+            );
+          } else {
+            gsap.set(spans, { opacity: 0, y: 10 });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(el);
+  });
+});
+
+// Specific Animated paragraph (Only for index)
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.querySelector(".luxury-animated-text");
+  if (!el) return;
+
+  const text = el.textContent.trim();
+  el.textContent = "";
+
+  [...text].forEach((char) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    el.appendChild(span);
+  });
+
+  const spans = el.querySelectorAll("span");
+
+  gsap.set(spans, { opacity: 0, y: 6 });
+
+  const tl = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 0.7,
+  });
+
+  tl.to(spans, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: 0.025,
+    ease: "power2.out",
+  });
+});
