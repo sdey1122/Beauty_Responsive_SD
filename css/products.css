@@ -903,6 +903,15 @@ ul {
   overflow-y: auto;
 }
 
+.filters-dialog-close {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+.filters-dialog-close i {
+  color: #000000 !important;
+}
+
 .prod-card {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
