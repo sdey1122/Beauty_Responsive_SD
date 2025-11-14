@@ -723,6 +723,7 @@ ul {
 .prod-price {
   font-size: 13px;
   color: var(--secondary-text-color);
+  margin-right: -12px;
 }
 
 .prod-meta .rating {
