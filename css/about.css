@@ -117,6 +117,9 @@ ul {
 .nav-icons {
   display: flex;
   height: fit-content;
+  justify-content: center;
+  text-align: center;
+  margin: 8px 15px 0 0;
 }
 
 .nav-link {
@@ -185,7 +188,6 @@ ul {
 #heartIcon {
   font-size: 20px;
   cursor: pointer;
-  margin-top: 2px;
   transition: color 0.2s ease;
   cursor: pointer;
 }
@@ -1719,6 +1721,9 @@ ul {
     background: transparent;
     overflow: hidden;
     margin: 6px 0 16px;
+  }
+   .mb-2{
+    margin-top: -0.5rem !important;
   }
   .off-divider::before {
     content: "";

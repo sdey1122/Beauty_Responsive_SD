@@ -29,7 +29,7 @@
   </head>
   <body>
     <div class="flair flair--3"></div>
-    <!-- Header Section -->
+     <!-- Header Section -->
     <header class="header-section">
       <nav class="navbar navbar-expand-lg">
         <div class="container navbar-container">
@@ -80,7 +80,7 @@
                   <img
                     src="./assets/page-one-images/navbar-banner/navbar-search-icon.png"
                     alt="Search"
-                    class="search-icon"
+                    class="search-icon-nav"
                   />
                   <input
                     type="text"
@@ -92,7 +92,7 @@
                 </form>
                 <li class="nav-item">
                   <a
-                    class="nav-link hover-link"
+                    class="nav-link hover-link active"
                     aria-current="page"
                     href="index.html"
                     >Home</a
@@ -100,57 +100,21 @@
                 </li>
                 <li class="nav-item">
                   <a
-                    class="nav-link hover-link active"
+                    class="nav-link hover-link"
                     aria-current="page"
                     href="about.html"
                     >About Us</a
                   >
                 </li>
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
+                <li class="nav-item">
+                  <a class="nav-link hover-link" href="products.html">
                     Products
                   </a>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a class="dropdown-item" href="products.html"
-                        >All Products</a
-                      >
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Product Two</a>
-                    </li>
-                    <li><a class="dropdown-item" href="#">Product Three</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Product Four</a>
-                    </li>
-                  </ul>
                 </li>
               </ul>
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                    >Multimedia</a
-                  >
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Image Gallery</a></li>
-                    <li>
-                      <a class="dropdown-item" href="#">Hand Growth</a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">Face Growth</a>
-                    </li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link hover-link" href="#">Multimedia</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link hover-link" aria-current="page" href="#"
@@ -165,19 +129,19 @@
                     >Contact Us</a
                   >
                 </li>
-                <ul class="nav-icons">
-                  <li class="nav-item nav-icon-account">
-                    <a href="register-login.html"
-                      ><i class="fa-regular fa-user user-icon"></i
-                    ></a>
-                  </li>
-                  <li class="nav-item nav-icon-cart">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </li>
-                  <li class="nav-item nav-icon-heart">
-                    <i class="fa-regular fa-heart" id="heartIcon"></i>
-                  </li>
-                </ul>
+              </ul>
+              <ul class="nav-icons">
+                <li class="nav-item nav-icon-account">
+                  <a href="register-login.html"
+                    ><i class="fa-regular fa-user user-icon"></i
+                  ></a>
+                </li>
+                <li class="nav-item nav-icon-cart">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </li>
+                <li class="nav-item nav-icon-heart">
+                  <i class="fa-regular fa-heart" id="heartIcon"></i>
+                </li>
               </ul>
             </div>
           </div>
@@ -194,7 +158,7 @@
               <div class="about-banner-links">
                 <a href="index.html">Home</a>
                 <span>/</span>
-                <a href="products.html" class="current">Product</a>
+                <a href="#" class="current">Product</a>
               </div>
             </div>
           </div>
@@ -262,7 +226,7 @@
                             YAZ Persian Herb Face Oil
                           </div>
                           <div
-                            class="rating rating-gold"
+                            class="rating rating-static"
                             data-default="5"
                           ></div>
                           <div class="recent-price">29,900 Kr.</div>
@@ -280,7 +244,7 @@
                             YAZ Vitamin A Hand Cream
                           </div>
                           <div
-                            class="rating rating-gold"
+                            class="rating rating-static"
                             data-default="3"
                           ></div>
                           <div class="recent-price">14,900 Kr.</div>
@@ -296,7 +260,7 @@
                         <div class="recent-meta">
                           <div class="recent-name">YAZ Vitamin A Face Mask</div>
                           <div
-                            class="rating rating-gold"
+                            class="rating rating-static"
                             data-default="4"
                           ></div>
                           <div class="recent-price">36,999 Kr.</div>
@@ -314,7 +278,7 @@
                             YAZ Hair Shampoo AxZ Plus
                           </div>
                           <div
-                            class="rating rating-gold"
+                            class="rating rating-static"
                             data-default="2"
                           ></div>
                           <div class="recent-price">12,900 Kr.</div>
@@ -332,7 +296,7 @@
                             YAZ Vitamin A Face Mask AP
                           </div>
                           <div
-                            class="rating rating-gold"
+                            class="rating rating-static"
                             data-default="4"
                           ></div>
                           <div class="recent-price">36,000 Kr.</div>
@@ -379,7 +343,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Vitamin A Hand Cream</h3>
-                    <div class="rating rating-gold" data-default="3"></div>
+                    <div class="rating rating-static" data-default="3"></div>
                     <div class="prod-price">14,900 Kr.</div>
                   </div>
                 </div>
@@ -392,7 +356,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Vitamin A Face Mask</h3>
-                    <div class="rating rating-gold" data-default="5"></div>
+                    <div class="rating rating-static" data-default="5"></div>
                     <div class="prod-price">36,000 Kr.</div>
                   </div>
                 </div>
@@ -405,7 +369,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Hair Shampoo</h3>
-                    <div class="rating rating-gold" data-default="5"></div>
+                    <div class="rating rating-static" data-default="5"></div>
                     <div class="prod-price">16,900 Kr.</div>
                   </div>
                 </div>
@@ -418,7 +382,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Persian Herb Face Oil</h3>
-                    <div class="rating rating-gold" data-default="5"></div>
+                    <div class="rating rating-static" data-default="5"></div>
                     <div class="prod-price">27,900 Kr.</div>
                   </div>
                 </div>
@@ -431,7 +395,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Vitamin A Face Cream</h3>
-                    <div class="rating rating-gold" data-default="2"></div>
+                    <div class="rating rating-static" data-default="2"></div>
                     <div class="prod-price">29,900 Kr.</div>
                   </div>
                 </div>
@@ -444,7 +408,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Eye Cream</h3>
-                    <div class="rating rating-gold" data-default="4"></div>
+                    <div class="rating rating-static" data-default="4"></div>
                     <div class="prod-price">30,000 Kr.</div>
                   </div>
                 </div>
@@ -457,7 +421,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Antioxidant Serum</h3>
-                    <div class="rating rating-gold" data-default="3"></div>
+                    <div class="rating rating-static" data-default="3"></div>
                     <div class="prod-price">35,000 Kr.</div>
                   </div>
                 </div>
@@ -470,7 +434,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Shaving Cream</h3>
-                    <div class="rating rating-gold" data-default="1"></div>
+                    <div class="rating rating-static" data-default="1"></div>
                     <div class="prod-price">14,400 Kr.</div>
                   </div>
                 </div>
@@ -483,7 +447,7 @@
                   </div>
                   <div class="prod-meta">
                     <h3 class="prod-name">YAZ Persian Herb Med Oil</h3>
-                    <div class="rating rating-gold" data-default="4"></div>
+                    <div class="rating rating-static" data-default="4"></div>
                     <div class="prod-price">12,000 Kr.</div>
                   </div>
                 </div>

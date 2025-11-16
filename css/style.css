@@ -220,6 +220,9 @@ body.luxshop-loader-active {
 .nav-icons {
   display: flex;
   height: fit-content;
+  justify-content: center;
+  text-align: center;
+  margin: 8px 15px 0 0;
 }
 
 .nav-link {
@@ -288,7 +291,6 @@ body.luxshop-loader-active {
 #heartIcon {
   font-size: 20px;
   cursor: pointer;
-  margin-top: 2px;
   transition: color 0.2s ease;
   cursor: pointer;
 }
@@ -547,6 +549,48 @@ body.luxshop-loader-active {
   100% {
     transform: translateX(-50%);
   }
+}
+
+/* Feature Section 2.0 */
+.features-section {
+  padding: 10px 0 20px;
+}
+
+.features-slider {
+  overflow: hidden;
+}
+
+.features-slider .slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.features-slider .slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  margin-right: 60px;
+}
+
+.feature-icon {
+  width: 44px;
+  margin-right: 8px;
+}
+
+.feature-text {
+  color: var(--primary-text-color);
+  font-size: 16px;
+}
+
+.features-slider .slick-arrow,
+.features-slider .slick-dots {
+  display: none !important;
 }
 
 /* About Section */
@@ -1240,6 +1284,10 @@ body.luxshop-loader-active {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
   filter: brightness(1.1) contrast(1.05);
   cursor: pointer;
+}
+.why-images > img:hover:first-child {
+  transform: skew(5deg);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
 }
 
 .why-images > img:hover:last-child {
@@ -2566,6 +2614,9 @@ body.luxshop-loader-active {
     background: transparent;
     overflow: hidden;
     margin: 6px 0 16px;
+  }
+  .mb-2 {
+    margin-top: -0.5rem !important;
   }
   .off-divider::before {
     content: "";

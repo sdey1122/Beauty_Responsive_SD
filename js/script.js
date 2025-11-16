@@ -398,3 +398,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 1400);
 });
 
+// Feature Scetion 2.0
+$(document).ready(function () {
+  $(".features-slider").slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 8000,
+    cssEase: "linear",
+    arrows: false,
+    dots: false,
+    pauseOnHover: true,
+    pauseOnFocus: false,
+    variableWidth: true,
+  });
+});

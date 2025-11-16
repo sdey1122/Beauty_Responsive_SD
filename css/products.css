@@ -117,6 +117,9 @@ ul {
 .nav-icons {
   display: flex;
   height: fit-content;
+  justify-content: center;
+  text-align: center;
+  margin: 8px 15px 0 0;
 }
 
 .nav-link {
@@ -144,7 +147,7 @@ ul {
   color: var(--primary-text-color);
 }
 
-.search-icon {
+.search-icon-nav {
   position: absolute;
   left: 14px;
   top: 50%;
@@ -185,7 +188,6 @@ ul {
 #heartIcon {
   font-size: 20px;
   cursor: pointer;
-  margin-top: 2px;
   transition: color 0.2s ease;
   cursor: pointer;
 }
@@ -589,6 +591,18 @@ ul {
   margin-left: 10px;
 }
 
+.rating-static {
+  display: inline-flex;
+  pointer-events: none;       
+  user-select: none;         
+}
+
+.rating-static i {
+  color: #d4a44c;            
+  font-size: 14px;
+  pointer-events: none;       
+}
+
 .rating {
   display: inline-block;
   text-align: center;
@@ -764,13 +778,20 @@ ul {
     opacity 0.22s ease;
 }
 
-.filters-dialog-head,
-.filters-dialog-foot {
+.filters-dialog-head {
   position: sticky;
   top: 0;
   background: var(--card-bg);
-  z-index: 1;
+  z-index: 2; 
 }
+
+.filters-dialog-foot {
+  position: sticky;
+  bottom: 0;
+  background: var(--card-bg);
+  z-index: 2;
+}
+
 
 .filters-dialog-head {
   display: flex;
@@ -800,6 +821,7 @@ ul {
 }
 
 .filters-dialog-foot {
+  position: sticky;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -1714,6 +1736,9 @@ ul {
     background: transparent;
     overflow: hidden;
     margin: 6px 0 16px;
+  }
+  .mb-2 {
+    margin-top: -0.5rem !important;
   }
   .off-divider::before {
     content: "";
