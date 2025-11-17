@@ -3143,6 +3143,13 @@ body.luxshop-loader-active {
     width: 100px !important;
     height: 2px;
   }
+
+  /* Header Section */
+  .banner-copy {
+    background: url("../assets/page-one-images/navbar-banner/banner-background.png")
+      no-repeat 23% 0% / cover;
+  }
+
   /* Banner Section */
   .banner-title {
     font-size: 64px;
